@@ -110,6 +110,7 @@ class OrmProductWriter extends AbstractConfigurableStepElement implements
         }
         $this->productManager->handleAllMedia($items);
         $this->stepExecution->setWriteCount(count($items));
+        $this->productManager->saveAll($items, false);
 
         $storageManager = $this->productManager->getStorageManager();
 

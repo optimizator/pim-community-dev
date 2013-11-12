@@ -106,7 +106,6 @@ class OrmProductWriter extends AbstractConfigurableStepElement implements
         $this->addVersionListener->setRealTimeVersioning(false);
         foreach ($items as $item) {
             $this->incrementCount($item);
-            $this->productManager->save($item, false, false);
         }
         $this->productManager->handleAllMedia($items);
         $this->stepExecution->setWriteCount(count($items));
